@@ -34,18 +34,11 @@ class Home extends Component {
   componentDidUpdate(prevProps, prevState) {
     if (this.props.booking.status === 'confirmed') {
       Actions.trackDriver({ type: 'reset' });
+      this.props.getCurrentLocation();
     }
-    // this.props.getCurrentLocation();
   }
 
   render() {
-    // const region = {
-    //   latitude: 60.16999932,
-    //   longitude: 24.941829566,
-    //   latitudeDelta: 0.0922,
-    //   longitudeDelta: 0.0421
-    // };
-
     return (
       <Container>
         {this.props.booking.status !== 'pending' ? (

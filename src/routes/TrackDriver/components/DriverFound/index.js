@@ -1,11 +1,11 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, Image } from 'react-native';
 import { View, Button } from 'native-base';
 
 import styles from './styles';
 
 const DriverFound = ({ driverInfo, getDriverLocation }) => {
-  const { profilePic } = driverImage || '';
+  const { avatar } = driverInfo || '';
   const { vehicle } = driverInfo || {};
 
   return (
@@ -15,7 +15,7 @@ const DriverFound = ({ driverInfo, getDriverLocation }) => {
         <Image
           resizemode="contain"
           style={styles.driverPic}
-          source={{ uri: profilePic }}
+          source={{ uri: avatar }}
         />
         <View style={styles.driverInfo}>
           <Text style={styles.quotationMarkLeft}>""</Text>

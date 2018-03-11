@@ -45,20 +45,23 @@ export const getCurrentLocation = () => async dispatch => {
 };
 
 export const getDriverInfo = () => (dispatch, store) => {
-  let id = store().home.booking.driverID;
+  let id = store().home.booking.driverId;
+  console.log('ID', id);
   fetch(`http://localhost:3000/api/driver/${id}`)
-    .then(res => dispatch({ type: GET_DRIVER_INFORMATION, payload: res.body }))
+    .then(res => res.json())
+    .then(res => dispatch({ type: GET_DRIVER_INFORMATION, payload: res }))
     .catch(err =>
       console.error(`FAILED GETTING DRIVER INFO ❌  ${err.message}`)
     );
 };
 
 export const getDriverLocation = () => (dispatch, store) => {
-  let id = store().home.booking.driverID;
+  let id = store().home.booking.driverId;
   fetch(`http://localhost:3000/api/driverLocation/${id}`)
-    .then(res => dispatch({ type: GET_DRIVER_LOCATION, payload: res.body }))
+    .then(res => res.json())
+    .then(res => dispatch({ type: GET_DRIVER_LOCATION, payload: res }))
     .catch(err =>
-      console.error(`FAILED GETTING DRIVER INFO ❌  ${err.message}`)
+      console.error(`FAILED GETTING DRIVER LOCATION ❌  ${err.message}`)
     );
 };
 

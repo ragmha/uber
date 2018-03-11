@@ -13,7 +13,7 @@ const mapStateToProps = state => ({
   selectedAddress: state.home.selectedAddress || {},
   driverInfo: state.trackDriver.driverInfo || {},
   driverLocation: state.trackDriver.driverLocation,
-  showDriverFound: state.trackDrier.showDriverFound,
+  showDriverFound: state.trackDriver.showDriverFound,
   showCarMarker: state.trackDriver.showCarMarker,
   distanceFromDriver: state.trackDriver.distanceFromDriver || {}
 });

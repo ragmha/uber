@@ -2,33 +2,30 @@
 <html>
 
 <head>
-    <title>Task List</title>
+    <title>Taxi UI</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <h1>Driver Profile</h1>
+    <center>
+        <h1>Driver Profile UI</h1>
+    </center>
+    <div>
+        <center>
+            <form id="driverForm">
+                <select style="width:50%; height:30px;" id="bookingStatus">
+                    <option value="confirmed">Confirmed</option>
+                    <option value="cancel">Cancel</option>
+                </select>
+                <br/>
+                <br/>
+                <br/>
+                <input style="color:blueviolet; width:20%; height:40px;" type="button" name="submit" value="Send" id="confirm">
+            </form>
+        </center>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-6">
-                <form id="driverForm">
-                    <select class="form-control" id="bookingStatus">
-                        <option value="confirmed">Confirmed</option>
-                    </select>
-                    <br/>
-                    <input type="button" name="submit" value="Confirm" Booking” class="btn btn-danger" id="confirm">
-                </form>
-            </div>
-            <div class="col-xs-6"></div>
-        </div>
+    </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js" type="text/javascript"></script>
@@ -88,36 +85,36 @@
 
             socket.on("trackDriver", location => {
                 var driverMovement = [{
-                    lat: 3.113667,
-                    long: 101.687565
+                    lat: 60.155137,
+                    long: 24.942501
                 },
                 {
-                    lat: 3.118748,
-                    long: 101.678467
+                    lat: 60.156728,
+                    long: 24.941857
                 },
                 {
-                    lat: 3.127270,
-                    long: 101.688423
+                    lat: 60.158266,
+                    long: 24.940977
                 },
                 {
-                    lat: 3.137383,
-                    long: 101.695118
+                    lat: 60.159825,
+                    long: 24.942158
                 },
                 {
-                    lat: 3.137383,
-                    long: 101.695118
+                    lat: 60.161149,
+                    long: 24.942265
                 },
                 {
-                    lat: 3.152857,
-                    long: 101.703529
+                    lat: 60.164963,
+                    long: 24.939550
                 },
                 {
-                    lat: 3.146642,
-                    long: 101.695845
+                    lat: 60.168513,
+                    long: 24.934624
                 },
                 {
-                    lat: 3.1591601,
-                    long: 101.7136599
+                    lat: 60.169890,
+                    long: 24.938307
                 }];
 
                 const index = 0;

@@ -13,6 +13,7 @@ const index = require('./routes/index');
 const bookings = require('./routes/bookings');
 const driverLocationSocket = require('./routes/driverLocation');
 const driverLocation = require('./routes/driverLocation');
+const drivers = require('./routes/drivers');
 
 //views
 
@@ -28,19 +29,11 @@ app.use('/', index);
 app.use('/api', bookings);
 app.use('/api', driverLocationSocket);
 app.use('/api', driverLocation);
+app.use('/api', drivers);
 
 io.listen(app.listen(PORT, () => console.log('Server running on PORT:', PORT)));
 
 app.io = io.on('connection', function(socket) {
   console.log('Driver connected: ' + socket.id);
   // socket.on('disconnect', () => console.log('Driver disconnected'));
-  setTimeout(() => {
-    socket.on('action', action => {
-      console.log('Emitting some action');
-      socket.emit('action', {
-        type: 'BOOKING_CONFIRMED',
-        payload: 'confirmed'
-      });
-    });
-  }, 6000);
 });

@@ -18,6 +18,7 @@ const styles = {
   },
   iconContainer: {
     width: 50,
+    marginLeft: 12,
     alignItems: 'center',
     justifyContent: 'center'
   },

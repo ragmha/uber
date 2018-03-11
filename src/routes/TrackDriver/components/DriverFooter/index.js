@@ -7,14 +7,14 @@ import { FontAwesome } from '@expo/vector-icons';
 import styles from './styles.js';
 
 export const DriverFooterProfile = ({ driverInfo, getDriverLocation }) => {
-  const { profilePic, rating } = driverInfo || '';
+  const { avatar, rating } = driverInfo || '';
   return (
     <View style={styles.footerContainer}>
       <View style={styles.imageContainer}>
         <Image
           resizemode="contain"
           style={styles.driverPic}
-          source={{ uri: profilePic }}
+          source={{ uri: avatar }}
         />
       </View>
       <View style={styles.ratingContainer}>
@@ -23,7 +23,7 @@ export const DriverFooterProfile = ({ driverInfo, getDriverLocation }) => {
           disabled={true}
           maxStars={5}
           rating={rating}
-          starColor="#FF5E3A"
+          fullStarColor="purple"
         />
       </View>
       <View style={styles.iconContainer} />
